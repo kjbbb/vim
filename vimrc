@@ -40,3 +40,5 @@ set listchars=tab:»·,trail:·,extends:»
 
 "F4 to toggle search highlighting
 map <F4> :set nohls!<cr>
+"F5 to toggle NERDtree
+map <F5> :NERDTreeToggle<CR>
