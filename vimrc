@@ -42,3 +42,6 @@ set listchars=tab:»·,trail:·,extends:»
 map <F4> :set nohls!<cr>
 "F5 to toggle NERDtree
 map <F5> :NERDTreeToggle<CR>
+
+"use mouse
+set mouse=a
