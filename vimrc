@@ -31,7 +31,7 @@ set nocp
 filetype plugin on
 source ~/.vim/plugin/matchit.vim
 source ~/.vim/plugin/zencoding.vim
-colorscheme DarkDefault
+colorscheme wombat
 
 "map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
