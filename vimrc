@@ -9,7 +9,7 @@ if &term == "screen" || &term == "xterm" || &term == "xterm-color"
 endif
 
 set wildmenu
-set ts=4 sw=4
+set ts=2 sw=2
 set expandtab
 
 "syntax highlighting
@@ -45,3 +45,9 @@ map <F5> :NERDTreeToggle<CR>
 
 "use mouse
 set mouse=a
+
+"Terminal colors
+set t_Co=256
+
+"Set text width to 80
+setl tw=80
