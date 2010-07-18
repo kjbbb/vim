@@ -51,3 +51,22 @@ set t_Co=256
 
 "Set text width to 80
 setl tw=80
+
+"Toggle mouse usage
+nnoremap <F3> :call ToggleMouse()<CR>
+function! ToggleMouse()
+  if &mouse == 'a'
+    set mouse=c
+    echo "Mouse usage disabled"
+  else
+    set mouse=a
+    echo "Mouse usage enabled"
+  endif
+endfunction
+
+"Toggle Ctrl+n Ctrl+n to toggle line numbers
+nmap <C-N><C-N> :set invnumber<CR>
+
+"Toggle paste
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
