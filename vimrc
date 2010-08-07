@@ -8,6 +8,8 @@ if &term == "screen" || &term == "xterm" || &term == "xterm-color"
   set title
 endif
 
+set autoindent
+
 set wildmenu
 set ts=2 sw=2
 set expandtab
