@@ -1,5 +1,7 @@
-autocmd BufEnter * let &titlestring =  "Vim: " . "[" . hostname() . "] " . expand("%:t") 
+"Define the terminal title string.
+autocmd BufEnter * let &titlestring =  "vim " . "(" . hostname() . ") " . expand("%:t")
 
+"Set the terminal title string if we can.
 if &term == "screen"
   set t_ts=^[k
   set t_fs=^[\
@@ -8,67 +10,74 @@ if &term == "screen" || &term == "xterm" || &term == "xterm-color"
   set title
 endif
 
-set autoindent
+"Set default text width to 80.
+setl tw=80
 
-set wildmenu
-set ts=2 sw=2
+"Use mouse if we can.
+if has("mouse")
+  set mouse=a
+endif
+
+let NERDTreeMouseMode=2
+
+"Set the default indent rules.
+"See ~/.vim/after/ftplugin for file-specific indent rules.
+filetype plugin indent on
+set autoindent
+set tabstop=2
+set shiftwidth=2
 set expandtab
 
-"syntax highlighting
+"Turn on the auto complete menu for status line, text completion, etc.
+set wildmenu
+
+"Turn on syntax highlighting.
 syntax enable
 
-"highlight searches
+"Set the search options. Highlight the searches, and interactively search
+"as the text is being typed.
 set hlsearch
-set ruler
-set t_Co=256
-set fileformats=unix
-
-".swp directory
-set directory=~/.vim/tmp
-
-"Incremental search
 set incsearch
 
+"Show where the cursor is in the file (status bar)
+set ruler
+
+"Store temporary .swp files here instead of in the current working directory.
+set directory=~/.vim/tmp
+
+"Set non-compatible mode (so vim doesn't have to behave like vi).
 set nocp
-filetype plugin on
-source ~/.vim/plugin/matchit.vim
-source ~/.vim/plugin/zencoding.vim
-colorscheme wombat
 
-"map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-
+"Show special characters such as tabs and trailing characters. Define these
+"characters as well.
 set list
 set listchars=tab:»·,trail:·,extends:»
 
-"F4 to toggle search highlighting
-map <F4> :set nohls!<cr>
-"F5 to toggle NERDtree
-map <F5> :NERDTreeToggle<CR>
+"Key bindings
 
-"use mouse
-set mouse=a
-
-"Terminal colors
-set t_Co=256
-
-"Set text width to 80
-setl tw=80
-
-"Toggle mouse usage
-nnoremap <F3> :call ToggleMouse()<CR>
-function! ToggleMouse()
-  if &mouse == 'a'
-    set mouse=c
-    echo "Mouse usage disabled"
-  else
-    set mouse=a
-    echo "Mouse usage enabled"
-  endif
-endfunction
-
-"Toggle Ctrl+n Ctrl+n to toggle line numbers
-nmap <C-N><C-N> :set invnumber<CR>
-
-"Toggle paste
+"F2 toggle paste
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
+
+"F3 Toggle mouse usage
+if has("mouse")
+  nnoremap <F3> :call ToggleMouse()<CR>
+  function! ToggleMouse()
+    if &mouse == 'a'
+      set mouse=c
+      echo "Mouse usage disabled"
+    else
+      set mouse=a
+      echo "Mouse usage enabled"
+    endif
+  endfunction
+endif
+
+"F4 toggle search highlighting
+map <F4> :set nohls!<cr>
+
+"F5 toggle NERDTree
+map <F5> :NERDTreeToggle<CR>
+
+"Ctrl+n Ctrl+n toggle line numbers
+nmap <C-N><C-N> :set invnumber<CR>
