@@ -1,5 +1,5 @@
 "Define the terminal title string.
-autocmd BufEnter * let &titlestring =  "vim " . "(" . hostname() . ") " . expand("%:t")
+autocmd BufEnter * let &titlestring =  expand("%:t") . " - vim " . "[" . hostname() . "] "
 
 "Set the terminal title string if we can.
 if &term == "screen"
