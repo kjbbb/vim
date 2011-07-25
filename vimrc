@@ -29,6 +29,10 @@ set directory=~/.vim/tmp
 "Incremental search
 set incsearch
 
+"Ignore case when searching
+set ic
+set scs
+
 set nocp
 filetype plugin on
 source ~/.vim/plugin/matchit.vim
