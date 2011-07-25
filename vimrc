@@ -45,7 +45,13 @@ set ruler
 "Store temporary .swp files here instead of in the current working directory.
 set directory=~/.vim/tmp
 
-"Set non-compatible mode (so vim doesn't have to behave like vi).
+"Incremental search
+set incsearch
+
+"Ignore case when searching
+set ic
+set scs
+
 set nocp
 
 "Show special characters such as tabs and trailing characters. Define these
