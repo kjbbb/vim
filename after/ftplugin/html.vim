@@ -1,6 +1,3 @@
-setlocal shiftwidth=2
-setlocal tabstop=2
-
 "Load the matchit plugin (for matching html tags with the % key)
 source ~/.vim/plugin/matchit.vim
 

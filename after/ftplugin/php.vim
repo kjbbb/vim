@@ -1,5 +1,3 @@
-setlocal shiftwidth=2
-setlocal tabstop=2
 set cindent
 
 "Load the matchit plugin (for matching html tags with the % key)

@@ -24,9 +24,10 @@ let NERDTreeMouseMode=2
 "See ~/.vim/after/ftplugin for file-specific indent rules.
 filetype plugin indent on
 set autoindent
-set tabstop=2
-set shiftwidth=2
-set expandtab
+set tabstop=8
+set shiftwidth=8
+set softtabstop=8
+set noexpandtab
 
 "Turn on the auto complete menu for status line, text completion, etc.
 set wildmenu
