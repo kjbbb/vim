@@ -89,4 +89,6 @@ map <F5> :NERDTreeToggle<CR>
 "Ctrl+n Ctrl+n toggle line numbers
 nmap <C-N><C-N> :set invnumber<CR>
 
+set background=dark
 colorscheme solarized
+set guifont=Menlo:h11.00
