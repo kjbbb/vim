@@ -12,7 +12,6 @@ endif
 
 "Set default text width to 80.
 setl tw=80
-set colorcolumn=80
 
 "Use mouse if we can.
 if has("mouse")
